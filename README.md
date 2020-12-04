@@ -1,5 +1,5 @@
 
-# The tool to build godwoken polyjuice layer 2 contract args
+# Build godwoken polyjuice layer 2 contract args
 
 
 ## Build generator arguments

@@ -4,7 +4,7 @@
 
 ## Build generator arguments
 
-A [usage example](https://github.com/TheWaWaR/godwoken/blob/7d9f0e835c93def4f1ade4ebdaa27683411da406/crates/generator/src/tests/examples.rs#L22-L79)
+A [usage example](https://github.com/TheWaWaR/godwoken/blob/7d9f0e835c93def4f1ade4ebdaa27683411da406/crates/generator/src/tests/examples.rs#L22-L79) in godwoken.
 ```
 $ cargo run -- --help
 polyjuice evm message builder 
@@ -26,7 +26,7 @@ OPTIONS:
                                      0x0000000000000000000000000000000000000000000000000000000000000000]
 ```
 
-Frame structure (depth = 0)
+Frame structure (`depth = 0`)
 ```
 args[0..2]               => depth
 args[2..3]               => flags
@@ -35,7 +35,7 @@ args[35..39]             => input_size
 args[39..39+input_size]  => input_data
 ```
 
-Frame structure (depth > 0)
+Frame structure (`depth > 0`)
 ```
 args[0..2]               => depth
 args[2..22]              => tx_origin

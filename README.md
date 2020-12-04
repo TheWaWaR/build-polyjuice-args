@@ -25,3 +25,22 @@ OPTIONS:
         --value <value>              The amount of Ether transferred with the message. [default:
                                      0x0000000000000000000000000000000000000000000000000000000000000000]
 ```
+
+Frame structure (depth = 0)
+```
+args[0..2]               => depth
+args[2..3]               => flags
+args[3..35]              => value
+args[35..39]             => input_size
+args[39..39+input_size]  => input_data
+```
+
+Frame structure (depth > 0)
+```
+args[0..2]               => depth
+args[2..22]              => tx_origin
+args[22..23]             => flags
+args[23..55]             => value
+args[55..59]             => input_size
+args[59..59+input_size]  => input_data
+```

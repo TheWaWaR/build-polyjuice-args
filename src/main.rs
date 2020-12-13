@@ -15,6 +15,7 @@ fn main() {
         .arg(
             Arg::with_name("tx-origin")
                 .long("tx-origin")
+                .short("o")
                 .takes_value(true)
                 .default_value("0x0000000000000000000000000000000000000000")
                 .help("The transaction original sender"),
@@ -31,6 +32,7 @@ fn main() {
         .arg(
             Arg::with_name("static-call")
                 .long("static-call")
+                .short("s")
                 .help("The flag for EVM message"),
         )
         .arg(
@@ -39,11 +41,12 @@ fn main() {
                 .short("v")
                 .takes_value(true)
                 .default_value("0x0000000000000000000000000000000000000000000000000000000000000000")
-                .help("The amount of Ether transferred with the message."),
+                .help("The amount of Ether transferred with the message(big endian)."),
         )
         .arg(
             Arg::with_name("input-data")
                 .long("input-data")
+                .short("i")
                 .takes_value(true)
                 .required(true)
                 .default_value("0x")
@@ -104,7 +107,7 @@ fn make_bytes(
     }
     buf.push(kind);
     buf.push(flags);
-    buf.extend(&value.to_le_bytes());
+    buf.extend(&value.to_be_bytes());
     buf.extend(&(input_data.len() as u32).to_le_bytes());
     buf.extend(input_data);
     hex::encode(&buf)

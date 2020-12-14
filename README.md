@@ -4,7 +4,7 @@
 
 ## Build generator arguments
 
-A [usage example](https://github.com/TheWaWaR/godwoken/blob/7d9f0e835c93def4f1ade4ebdaa27683411da406/crates/generator/src/tests/examples.rs#L22-L79) in godwoken.
+A [usage example](https://github.com/TheWaWaR/godwoken/blob/add-polyjuice-tests/crates/generator/src/tests/examples.rs) in godwoken.
 ```
 $ cargo run -- --help
 polyjuice evm message builder 
